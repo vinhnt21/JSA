@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Confession</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffd6e0;
+        font-family: Arial, sans-serif;
+      }
+      .message {
+        font-size: 24px;
+        color: #ff4d6d;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .buttons {
+        display: flex;
+        gap: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+      #yesBtn {
+        background-color: #4caf50;
+        color: white;
+      }
+      #noBtn {
+        background-color: #ff4d4d;
+        color: white;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message">Làm người yêu anh nhé</div>
+    <div class="buttons">
+      <button id="yesBtn">Có</button>
+      <button id="noBtn">Không</button>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+
+      yesBtn.addEventListener("mouseover", function () {
+        alert("Anh yêu em! ❤️");
+      });
+
+      noBtn.addEventListener("mouseover", function () {
+        const maxX = window.innerWidth - this.offsetWidth;
+        const maxY = window.innerHeight - this.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        this.style.position = "absolute";
+        this.style.left = randomX + "px";
+        this.style.top = randomY + "px";
+      });
+    </script>
+  </body>
+</html>
